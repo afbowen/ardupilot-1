@@ -199,7 +199,7 @@ void Copter::land_run_vertical_control(bool pause_descent)
         int32_t rangefinder_height_above_terrain_cm;
         bool rangefinder_height_above_terrain_cm_valid = get_rangefinder_height_above_terrain(rangefinder_height_above_terrain_cm);
 
-        if (doing_precision_landing && rangefinder_height_above_terrain_cm_valid && rangefinder_height_above_terrain_cm > 35 && rangefinder_height_above_terrain_cm < 200) {
+        if (doing_precision_landing && rangefinder_height_above_terrain_cm_valid && rangefinder_height_above_terrain_cm > 55 && rangefinder_height_above_terrain_cm < 220) {
             float max_descent_speed = abs(g.land_speed)/2.0f;
             float land_slowdown = MAX(0.0f, pos_control->get_horizontal_error()*(max_descent_speed/precland_acceptable_error));
             cmb_rate = MIN(-precland_min_descent_speed, -max_descent_speed+land_slowdown);
