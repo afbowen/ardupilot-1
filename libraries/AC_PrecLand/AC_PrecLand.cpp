@@ -363,7 +363,7 @@ bool AC_PrecLand::construct_pos_meas_using_rangefinder(float rangefinder_alt_m, 
                 dist = _backend->distance_to_target();
                 alt = dist * target_vec_unit_ned.z;
             } else {
-                alt = MAX(rangefinder_alt_m, 0.0f);
+                alt = MAX(rangefinder_alt_m-0.2f, 0.0f);
                 dist = alt / target_vec_unit_ned.z;
             }
 
